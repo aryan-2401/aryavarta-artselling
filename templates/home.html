@@ -1,0 +1,783 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>artselling</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+{% include "header.html"  %}
+
+  <body>
+
+
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide  col-12 "
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="/static/c1.jpg" height="400px" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+           <a href="/artworks/"> <button class="btn btn-primary me-2" type="button">
+              New Offers
+            </button> </a>
+           <a href="/artworks/"> <button class="btn btn-warning me-2" type="button">Explore</button> </a>
+           <a href="/artworks/"> <button class="btn btn-danger me-2" type="button">
+              Best works
+            </button> </a>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/static/c2.jpg" height="400px" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+           <a href="/artworks/"> <button class="btn btn-primary me-2" type="button">
+              New Offers
+            </button> </a>
+           <a href="/artworks/"> <button class="btn btn-success me-2" type="button">Explore</button> </a>
+           <a href="/artworks/"> <button class="btn btn-danger me-2" type="button">
+              Best works
+            </button> </a>
+          </div>
+        </div>
+        <div class="carousel-item"  data-bs-interval="2000">
+          <img src="/static/c3.jpg" height="400px" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+         <a href="/artworks/">   <button class="btn btn-success me-2" type="button">
+              New Offers
+            </button> </a>
+         <a href="/artworks/">   <button class="btn btn-warning me-2" type="button">Explore</button> </a>
+         <a href="/artworks/">   <button class="btn btn-danger me-2" type="button">
+              Best works
+            </button> </a>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+  
+<style>
+  .gradient-card {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 128, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .gradient-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 128, 0, 0.5);
+  }
+
+  .gradient-body {
+    background: linear-gradient(
+      135deg,
+      #e0ffe0,
+      #f0fff0,
+      #d4edda,
+      #e6ffe6,
+      #ccffcc
+    );
+    padding: 1rem;
+  }
+
+  .gradient-footer {
+    background: linear-gradient(
+      90deg,
+      #c8facc,
+      #b2f2d4,
+      #c3e6cb,
+      #e2f5dc,
+      #d0ffe6
+    );
+    padding: 0.75rem;
+  }
+
+  .gradient-card .btn {
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .btn-purchase:hover {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .btn-cart:hover {
+    background-color: #198754;
+    color: white;
+  }
+
+  .price-section {
+    background-color: #f0fdf4;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 10px rgba(0, 128, 0, 0.1);
+  }
+
+
+      .card:hover {
+        transform: scale(1.03);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 0 15px rgba(0, 128, 0, 0.3);
+      }
+      
+      .card-footer .btn {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .btn-purchase:hover {
+        background-color: #28a745;
+        color: white;
+      }
+      .btn-cart:hover {
+        background-color: #198754;
+        color: white;
+      }
+      .price-section {
+        background-color: #f0fdf4;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+    
+      .form-heading {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #6a1b9a, #00bcd4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .beautiful-form {
+        padding: 30px 40px;
+      }
+      .form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      
+      .beautiful-form {
+        width: 80%; /* reduce width */
+        max-width: 900px; /* restrict to a readable max width */
+        margin: auto;
+      }
+            
+      
+      .beautiful-form {
+        background: linear-gradient(to right, #f3e5f5, #e1f5fe);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .beautiful-form .form-label {
+        color: #4a148c;
+        font-weight: bold;
+      }
+      
+      .beautiful-form .form-control,
+      .beautiful-form .form-select {
+        border-radius: 12px;
+        border: 2px solid #ddd;
+        transition: all 0.3s ease;
+      }
+      
+      .beautiful-form .form-control:focus,
+      .beautiful-form .form-select:focus {
+        border-color: #7b1fa2;
+        box-shadow: 0 0 0 0.2rem rgba(123, 31, 162, 0.2);
+      }
+      
+      .beautiful-form .btn-primary {
+        background-color: #7b1fa2;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      
+      .beautiful-form .btn-primary:hover {
+        background-color: #4a148c;
+        color: #fff;
+      }
+      
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        
+        .art-card {
+          transition: transform 0.3s ease;
+          overflow: hidden;
+        }
+        .art-card:hover {
+          transform: scale(1.05);
+          z-index: 2;
+        }
+        video {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .card-body .description {
+          flex-grow: 1;
+          overflow-y: auto;
+          margin: 0.5rem 0;
+        }
+  
+        .art-card {
+          transition: transform 0.3s ease;
+          overflow: hidden;
+        }
+      
+        .art-card:hover {
+          transform: scale(1.05);
+          z-index: 2;
+        }
+      
+        video {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          padding: 1rem;
+          overflow: hidden;
+        }
+      
+        .card-title {
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+          font-size: 1.25rem;
+        }
+      
+        .card-body p.card-text:nth-of-type(1) {
+          flex-grow: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      
+        .card-body p.card-text:nth-of-type(2) {
+          margin-top: auto;
+          font-weight: bold;
+          color: #555;
+        }
+
+        
+      </style>
+      
+      <div class="container mt-5">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-6 d-flex flex-column gap-4">
+            <!-- Card 1: Hampi -->
+            <div class="card art-card" style="height: 350px;">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <video autoplay muted loop>
+                    <source src="/static/hampi_trip.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Hampi</h5>
+                    <div class="description">
+                      <p class="card-text">
+                        Hampi, a UNESCO World Heritage site, is a captivating ancient city in Karnataka, known for its stunning ruins and vibrant history. Once the capital of the Vijayanagara Empire, it boasts majestic temples like Virupaksha and Vittala, along with architectural marvels such as the Stone Chariot. The landscape is dotted with boulders, ruined palaces, and intricate carvings. Hampi's beauty is a blend of spirituality, art, and historical significance, making it a must-visit for history and culture enthusiasts.
+                      </p>
+                      
+                    </div>
+                    <p class="card-text"><strong>Location: Hampi, Karnataka</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Card 2: Stone Chariot -->
+            <div class="card art-card" style="height: 280px;">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <video autoplay muted loop>
+                    <source src="/static/StoneChariot.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Stone Chariot</h5>
+                    <div class="description">
+                      <p class="card-text">
+                        I recreated the iconic Stone Chariot in charcoal while surrounded by Hampi’s spiritual silence. My video shows the process unfold, blending motion, memory, and ancient art into one living canvas.
+                      </p>
+                    </div>
+                    <p class="card-text"><strong>Location: Hampi, Karnataka</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Right Column -->
+          <div class="col-md-6 d-flex flex-column gap-4">
+            <!-- Card 3: Coorg Monastery -->
+            <div class="card art-card" style="height: 290px;">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <video autoplay muted loop>
+                    <source src="/static/monestary.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Coorg Monastery</h5>
+                    <div class="description">
+                      <p class="card-text">
+                        Namdroling Monastery, also known as the Golden Temple, is a Tibetan Buddhist center in Coorg, known for its stunning architecture, vibrant murals, and three large golden Buddha statues.
+                      </p>
+                    </div>
+                    <p class="card-text"><strong>Location: Coorg, Karnataka</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Card 4: Adiyogi -->
+            <div class="card art-card" style="height: 380px;">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <video autoplay muted loop>
+                    <source src="/static/adiyogi.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Adiyogi</h5>
+                    <div class="description">
+                      <p class="card-text">
+                        At the Adiyogi statue in Chikkamagaluru, I found myself captivated by the peaceful yet powerful presence of the towering figure. Its serene expression inspired me to translate its spiritual depth onto paper with charcoal. As I sketched, nature's quiet beauty surrounded me — the cool breeze, the distant sounds of the forest, and the ever-changing light. The video I created captures this profound connection, blending the statue’s stillness with the dynamic energy of the environment, revealing how art and spirituality merged into one harmonious experience
+                      </p>
+                    </div>
+                    <p class="card-text"><strong>Location: Chikkamagaluru, Karnataka</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  
+
+    <pre style="display: flex; justify-content: center; align-items: center; font-size: 2rem; margin-top: 30px;"><i class="fa-solid fa-users-viewfinder"></i> Top Artist</pre>
+
+
+<div style="display: flex; align-items: center; justify-content: space-evenly;">
+  
+  <div class="card1 " style="width: 18rem;">
+    <img src="/static/artist2.jpg" class=" card card-img-top rounded-circle" alt="...">
+    <div class="card-body"><P style="display: flex; align-items: center; justify-content: center;">Aryan Kumar</P>
+    </div>
+  </div>
+
+
+    <div class="card1 " style="width: 18rem;">
+      <img src="/static/artist1.jpg" class=" card card-img-top rounded-circle" alt="...">
+      <div class="card-body"><P style="display: flex; align-items: center; justify-content: center;">Aryan Kumar</P>
+      </div>
+    </div>
+
+    
+
+    <div class="card1 " style="width: 18rem;">
+      <img src="/static/artist3.jpg" class=" card card-img-top rounded-circle" alt="...">
+      <div class="card-body"><P style="display: flex; align-items: center; justify-content: center;">Aryan Kumar</P>
+      </div>
+    </div>
+
+  </div>
+
+
+  <pre style="display: flex; justify-content: center; align-items: center; font-size: 2rem; margin-top: 30px;"><i class="fa-solid fa-palette"></i> Top Artworks</pre>
+   
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+    
+        <!-- Budha -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success border-2">
+            <img src="/static/budha.jpg" class="card-img-top" style="height: 400px; object-fit: cover;" alt="budha">
+            <div class="card-body bg-light">
+              <h5 class="card-title text-success">Budha</h5>
+              <p class="card-text">A calm and spiritual charcoal depiction of Lord Buddha, reflecting peace and wisdom.</p>
+              <div class="d-flex align-items-center gap-2 price-section">
+                <p class="mb-0 fw-semibold text-dark">Price:</p>
+                <h6 class="mb-0 text-muted text-decoration-line-through">₹3000</h6>
+                <p class="mb-0 text-success fw-bold fs-5">₹2499</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Horse -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success border-2">
+            <img src="/static/horse.jpg" class="card-img-top" style="height: 400px; object-fit: cover;" alt="horse">
+            <div class="card-body bg-light">
+              <h5 class="card-title text-success">Horse</h5>
+              <p class="card-text">An energetic charcoal sketch of a running horse, symbolizing strength and freedom.</p>
+              <div class="d-flex align-items-center gap-2 price-section">
+                <p class="mb-0 fw-semibold text-dark">Price:</p>
+                <h6 class="mb-0 text-muted text-decoration-line-through">₹2700</h6>
+                <p class="mb-0 text-success fw-bold fs-5">₹2199</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Adiyogi -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success border-2">
+            <img src="/static/adiyogi.jpg" class="card-img-top" style="height: 400px; object-fit: cover;" alt="adiyogi">
+            <div class="card-body bg-light">
+              <h5 class="card-title text-success">Adiyogi</h5>
+              <p class="card-text">A divine representation of Adiyogi, carved in bold strokes capturing cosmic energy.</p>
+              <div class="d-flex align-items-center gap-2 price-section">
+                <p class="mb-0 fw-semibold text-dark">Price:</p>
+                <h6 class="mb-0 text-muted text-decoration-line-through">₹2600</h6>
+                <p class="mb-0 text-success fw-bold fs-5">₹2099</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Deer -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-success border-2">
+            <img src="/static/deer.jpg" class="card-img-top" style="height: 400px; object-fit: cover;" alt="deer">
+            <div class="card-body bg-light">
+              <h5 class="card-title text-success">Deer</h5>
+              <p class="card-text">A graceful deer captured in monochrome, evoking nature’s gentleness and elegance.</p>
+              <div class="d-flex align-items-center gap-2 price-section">
+                <p class="mb-0 fw-semibold text-dark">Price:</p>
+                <h6 class="mb-0 text-muted text-decoration-line-through">₹2000</h6>
+                <p class="mb-0 text-success fw-bold fs-5">₹1599</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    
+    <div class="form-wrapper">
+      <form method="POST" action="{% url 'data' %}" class="row center g-3 gap-3 m-5 start-50 form justify-content-md-center beautiful-form" enctype="multipart/form-data">    
+      {% csrf_token %}
+      
+    <input type="hidden" name="form_type" value="commission">
+        <pre class="form-heading">Request for Commision Art works</pre>
+    
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Phone Number</label>
+        <input type="number"  name="phone1" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" name="email1"  class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Art medium</label>
+        <select id="inputState" name="medium"  class="form-select">
+          <option selected>Choose...</option>
+          <option>Art medium-1</option>
+          <option>Art medium-2</option>
+          <option>Art medium-3</option>
+          <option>Art medium-4</option>
+          <option>Art medium-5</option>
+          <option>Art medium-6</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="inputEmail4" class="form-label">Set Your Price</label>
+        <input type="number"  name="price" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-6">
+        <label for="formFileLg" class="form-label">upload Your image</label>
+        <input name="image"  class="form-control form-control-lg" id="formFileLg" type="file">
+      </div>
+      <div class="mb-3 col-8 justify-content-md-center">
+        <label for="exampleFormControlTextarea1" class="form-label">Customization You want</label>
+        <textarea  name="custom" class="form-control" id="exampleFormControlTextarea1" PLACEHOLDER="Customization You want IN YOUR ARTWORKS " rows="5"></textarea>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">Book My Commision Work</label>
+          </div>
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">Order</button>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+
+
+
+
+
+  
+
+<style>
+  .gradient-card {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 128, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .gradient-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 128, 0, 0.5);
+  }
+
+  .gradient-body {
+    background: linear-gradient(
+      135deg,
+      #e0ffe0,
+      #f0fff0,
+      #d4edda,
+      #e6ffe6,
+      #ccffcc
+    );
+    padding: 1rem;
+  }
+
+  .gradient-footer {
+    background: linear-gradient(
+      90deg,
+      #c8facc,
+      #b2f2d4,
+      #c3e6cb,
+      #e2f5dc,
+      #d0ffe6
+    );
+    padding: 0.75rem;
+  }
+
+  .gradient-card .btn {
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .btn-purchase:hover {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .btn-cart:hover {
+    background-color: #198754;
+    color: white;
+  }
+
+  .price-section {
+    background-color: #f0fdf4;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 10px rgba(0, 128, 0, 0.1);
+  }
+
+
+      .card:hover {
+        transform: scale(1.03);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 0 15px rgba(0, 128, 0, 0.3);
+      }
+      
+      .card-footer .btn {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .btn-purchase:hover {
+        background-color: #28a745;
+        color: white;
+      }
+      .btn-cart:hover {
+        background-color: #198754;
+        color: white;
+      }
+      .price-section {
+        background-color: #f0fdf4;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+    
+      .form-heading {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #6a1b9a, #00bcd4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .beautiful-form {
+        padding: 30px 40px;
+      }
+      .form-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      
+      .beautiful-form {
+        width: 80%; /* reduce width */
+        max-width: 900px; /* restrict to a readable max width */
+        margin: auto;
+      }
+            
+      
+      .beautiful-form {
+        background: linear-gradient(to right, #f3e5f5, #e1f5fe);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .beautiful-form .form-label {
+        color: #4a148c;
+        font-weight: bold;
+      }
+      
+      .beautiful-form .form-control,
+      .beautiful-form .form-select {
+        border-radius: 12px;
+        border: 2px solid #ddd;
+        transition: all 0.3s ease;
+      }
+      
+      .beautiful-form .form-control:focus,
+      .beautiful-form .form-select:focus {
+        border-color: #7b1fa2;
+        box-shadow: 0 0 0 0.2rem rgba(123, 31, 162, 0.2);
+      }
+      
+      .beautiful-form .btn-primary {
+        background-color: #7b1fa2;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      
+      .beautiful-form .btn-primary:hover {
+        background-color: #4a148c;
+        color: #fff;
+      }
+      
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+{% include "footer.html"  %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css "
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

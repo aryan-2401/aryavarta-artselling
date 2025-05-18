@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>artselling</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    {% include "header.html"  %}
+        <style>
+          body {
+            background: linear-gradient(
+              135deg,
+              #ff9a9e,
+              #fad0c4,
+              #a1c4fd,
+              #c2e9fb,
+              #d4fc79,
+              #96e6a1,
+              #84fab0,
+              #a6c1ee,
+              #fbc2eb,
+              #fda085,
+              #f6d365,
+              #e0c3fc
+            );
+            background-size: 400% 400%;
+          
+            animation: gradientBG 12s ease infinite;
+            font-family: 'Segoe UI', sans-serif;
+          }
+    
+          @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+    
+          .form-container {
+            max-width: 750px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #ffffff, #f0f8ff);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+          }
+    
+          .form-container h2 {
+            font-size: 2rem;
+            color:rgb(141, 10, 235);
+            margin-bottom: 25px;
+            text-align: center;
+          }
+    
+          .form-label {
+            color: #333;
+            font-weight: 500;
+          }
+    
+          .form-control, .form-select {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+          }
+    
+          .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 5px rgba(51, 30, 187, 0.5);
+            border-color: #9370db;
+          }
+    
+          .btn-primary {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+          }
+    
+          .btn-primary:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            transform: scale(1.02);
+          }
+          
+    
+          .form-check-label {
+            color: #444;
+          }
+        </style>
+
+        <div class="form-container">
+          <h2><i class="fa-solid fa-file-signature me-2"></i>Contact Us</h2>
+    
+          <form method='POST' action="{% url 'data' %}">
+            {% csrf_token %}
+            
+    <input type="hidden" name="form_type" value="contact">
+            <div class"col-12">
+            <div class="col-5">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="number" name="phonec" class="form-control" id="phone" placeholder="Enter your phone number" />
+            </div>
+            <div class="col-5 ">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="emailc" class="form-control" id="email" placeholder="Enter your email" />
+            </div></div>
+    
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="state" class="form-label">State</label>
+                <select id="state" name="statec" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>State-1</option>
+                  <option>State-2</option>
+                  <option>State-3</option>
+                  <option>State-4</option>
+                  <option>State-5</option>
+                  <option>State-6</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <select id="city" name="cityc" class="form-select">
+                  <option selected>Choose...</option>
+                  <option>City-1</option>
+                  <option>City-2</option>
+                  <option>City-3</option>
+                  <option>City-4</option>
+                  <option>City-5</option>
+                  <option>City-6</option>
+                </select>
+              </div>
+            </div>
+    
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" name="addressc" class="form-control" id="address" placeholder="1234 Main St" />
+            </div>
+    
+            <div class="mb-3">
+              <label for="feedback" class="form-label">Add Your Feedback</label>
+              <textarea class="form-control" name="feedbackc" id="feedback" rows="5" placeholder="Write your message here..."></textarea>
+            </div>
+    
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="check" />
+              <label class="form-check-label" for="check">
+                Check me out
+              </label>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        {% include "footer.html"  %}
+        <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css "
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+  </html>
